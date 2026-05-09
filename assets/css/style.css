@@ -1,0 +1,329 @@
+/* UK Road Safety website style */
+:root {
+    --bg: #f2f4f7;
+    --surface: #ffffff;
+    --text: #111827;
+    --muted: #5f6374;
+    --primary: #102a4f;
+    --primary-soft: #1b4b84;
+    --accent: #ff8b1c;
+    --accent-soft: #ffe4c2;
+    --border: #d7dde4;
+    --shadow: 0 24px 50px rgba(16, 42, 79, 0.14);
+    --header-bg: linear-gradient(180deg, #102a4f, #173b6f);
+    --footer-bg: #0e2a4a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.site-header {
+    background: var(--header-bg);
+    color: white;
+    padding: 2rem 0 2.5rem;
+}
+
+.header-top {
+    display: grid;
+    gap: 2rem;
+}
+
+.secondary-header {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.site-header h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    letter-spacing: -0.04em;
+}
+
+.site-header p {
+    margin: 0;
+    max-width: 720px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.main-nav {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.main-nav a {
+    color: #f7fafc;
+    text-decoration: none;
+    padding: 0.75rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+main {
+    padding: 3rem 0 4rem;
+}
+
+.page-home .hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    padding: 3rem;
+    margin-bottom: 2rem;
+}
+
+.hero-card h2 {
+    margin-top: 0;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    line-height: 1.05;
+}
+
+.hero-card p {
+    color: var(--muted);
+    margin: 1rem 0 1.75rem;
+    max-width: 760px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.95rem 1.8rem;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.button-primary {
+    background: var(--accent);
+    color: white;
+}
+
+.button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(255, 139, 28, 0.18);
+}
+
+.section-block,
+.feature-card,
+.stat-card,
+.page-image {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    padding: 2rem;
+}
+
+.page-image {
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.page-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.page-image>* {
+    position: relative;
+    z-index: 1;
+}
+
+.page-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 139, 28, 0.45), transparent 25%);
+}
+
+.page-image p {
+    position: relative;
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 700;
+    max-width: 520px;
+}
+
+.page-image.home {
+    background: linear-gradient(135deg, #173b6f 20%, #1b4b84 55%, #ff8b1c 95%);
+}
+
+.page-image.law {
+    background: linear-gradient(135deg, #102a4f 15%, #1b4b84 60%, #ff8b1c 95%);
+}
+
+.page-image.fatal {
+    background: linear-gradient(135deg, #112d57 20%, #1f537d 55%, #ff8b1c 90%);
+}
+
+.page-image.stats {
+    background: linear-gradient(135deg, #102a4f 20%, #1b4b84 55%, #ff8b1c 90%);
+}
+
+.page-image.safety {
+    background: linear-gradient(135deg, #173b6f 20%, #1f4f7d 55%, #ff8b1c 92%);
+}
+
+.page-image.learning {
+    background: linear-gradient(135deg, #102a4f 20%, #154374 55%, #ff8b1c 95%);
+}
+
+.page-image.maintenance {
+    background: linear-gradient(135deg, #102a4f 25%, #1b4b84 55%, #ff8b1c 90%);
+}
+
+.page-image.links {
+    background: linear-gradient(135deg, #112d57 22%, #1b4b84 55%, #ff8b1c 90%);
+}
+
+.section-block+.section-block,
+.feature-card+.feature-card,
+.stat-card+.stat-card,
+.page-image+.section-block {
+    margin-top: 1.5rem;
+}
+
+.section-block h2,
+.feature-card h3,
+.stat-card h3 {
+    margin-top: 0;
+}
+
+.section-block ul,
+.section-block ol {
+    margin: 1.2rem 0 0;
+    padding-left: 1.3rem;
+}
+
+.section-block li,
+.feature-card p,
+.stat-card p {
+    color: var(--muted);
+}
+
+.grid-2,
+.grid-3,
+.hero-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3,
+.hero-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stats-grid {
+    align-items: stretch;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2.5rem 1.75rem;
+}
+
+.stat-card h3 {
+    margin: 0 0 0.75rem;
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+.links-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+}
+
+.links-list li {
+    margin-bottom: 0.9rem;
+}
+
+.links-list a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.links-list a:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    background: var(--footer-bg);
+    color: #f4f6f8;
+    padding: 2rem 0;
+}
+
+.site-footer p {
+    margin: 0;
+    color: #dfe7f2;
+}
+
+@media (max-width: 900px) {
+
+    .grid-2,
+    .grid-3,
+    .hero-grid,
+    .hero-block {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .site-header,
+    .secondary-header {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+}
