@@ -10,6 +10,9 @@
 
 <body>
     <header class="site-header">
+        <a href="index.html" class="site-logo" aria-label="UK Road Safety home">
+            <img src="assets/images/logo.svg" alt="UK Road Safety logo">
+        </a>
         <div class="container header-top">
             <div>
                 <h1>Links</h1>
@@ -61,6 +64,29 @@
                 <li><strong>Local authority sites:</strong> check your local council for area-specific rules and
                     updates.</li>
             </ul>
+        </section>
+
+        <section class="section-block contact-form-block">
+            <h2>Send us a message</h2>
+            <p>If you have any questions use the form below and we'll get back to you.
+            </p>
+            <form class="email-form">
+                <div class="form-grid">
+                    <label>
+                        Your name
+                        <input type="text" name="name" placeholder="Full name" required>
+                    </label>
+                    <label>
+                        Email address
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </label>
+                </div>
+                <label>
+                    Message
+                    <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+                </label>
+                <button type="submit" class="button button-primary">Send message</button>
+            </form>
         </section>
     </main>
 
